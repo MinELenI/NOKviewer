@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>nl.cbs.nokviewer</groupId>
+	<artifactId>NOKviewer</artifactId>
+	<packaging>war</packaging>
+	<version>0.2-SNAPSHOT</version>
+	<name>NOKviewer Webapp</name>
+	<description>Webrichtlijnen compliant webmap viewer voor de NOK.</description>
+	<url>http://mineleni.github.com/${project.artifactId}</url>
+	<inceptionYear>2013</inceptionYear>
+	<organization>
+		<name>Ministerie EZ</name>
+		<url>https://github.com/organizations/MinELenI</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>mprins</id>
+			<name>Mark Prins</name>
+			<url>https://github.com/mprins</url>
+			<organization>Dienst Landelijk Gebied, Ministerie EZ</organization>
+			<organizationUrl>http://www.dienstlandelijkgebied.nl/</organizationUrl>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>BSD license</name>
+			<url>https://raw.github.com/MinELenI/${project.artifactId}/master/LICENSE.md</url>
+			<comments />
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/MinELenI/${project.artifactId}/issues/</url>
+	</issueManagement>
+	<scm>
+		<url>https://github.com/MinELenI/${project.artifactId}</url>
+		<connection>scm:git:git@github.com:git://github.com/MinELenI/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:git@github.com:MinELenI/${project.artifactId}.git</developerConnection>
+		<tag>master</tag>
+	</scm>
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://gisdemo.agro.nl/jenkins/job/${project.artifactId}/</url>
+		<notifiers />
+	</ciManagement>
+	<prerequisites>
+		<maven>3.0.4</maven>
+	</prerequisites>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<proj.finalname>${project.artifactId}</proj.finalname>
+		<jdk.version>1.7</jdk.version>
+		<github.username />
+		<github.password />
+		<skipTests>false</skipTests>
+		<github.site.dryRun>false</github.site.dryRun>
+		<http.proxyHost />
+		<http.proxyPort>0</http.proxyPort>
+		<debug>false</debug>
+		<sass.OutputStyle>:compressed</sass.OutputStyle>
+	</properties>
+	<profiles>
+		<profile>
+			<id>jenkins</id>
+			<properties>
+				<github.global.server>github</github.global.server>
+			</properties>
+		</profile>
+		<profile>
+			<id>developer</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<debug>true</debug>
+				<sass.OutputStyle>:expanded</sass.OutputStyle>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mortbay.jetty</groupId>
+						<artifactId>jetty-maven-plugin</artifactId>
+						<version>8.1.7.v20120910</version>
+						<configuration>
+							<connectors>
+								<connector implementation="org.eclipse.jetty.server.bio.SocketConnector">
+									<port>8020</port>
+									<maxIdleTime>60000</maxIdleTime>
+								</connector>
+							</connectors>
+							<webAppConfig>
+								<baseResource
+									implementation="org.eclipse.jetty.util.resource.ResourceCollection">
+									<resourcesAsCSV>src/main/webapp,target/cbsviewer</resourcesAsCSV>
+								</baseResource>
+								<sessionHandler
+									implementation="org.eclipse.jetty.server.session.SessionHandler">
+									<sessionManager
+										implementation="org.eclipse.jetty.server.session.HashSessionManager">
+										<usingCookies>false</usingCookies>
+									</sessionManager>
+								</sessionHandler>
+							</webAppConfig>
+							<reload>manual</reload>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	<dependencies>
+		<dependency>
+			<groupId>nl.cbs.cbsviewer</groupId>
+			<artifactId>cbsviewer</artifactId>
+			<version>1.2-SNAPSHOT</version>
+			<type>war</type>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<defaultGoal>install</defaultGoal>
+		<finalName>${proj.finalname}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.jasig.maven</groupId>
+				<artifactId>sass-maven-plugin</artifactId>
+				<version>1.1.0</version>
+				<executions>
+					<execution>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>update-stylesheets</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<useCompass>true</useCompass>
+					<resources>
+						<resource>
+							<source>
+								<directory>src/main/sass/scss</directory>
+								<includes>
+									<include>*.scss</include>
+								</includes>
+								<excludes />
+							</source>
+							<destination>${project.build.directory}/${project.build.finalName}/css</destination>
+						</resource>
+					</resources>
+					<sassOptions>
+						<always_update>true</always_update>
+						<style>${sass.OutputStyle}</style>
+						<debug_info>${debug}</debug_info>
+					</sassOptions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<useCache>true</useCache>
+					<overlays>
+						<overlay>
+							<groupId>nl.cbs.cbsviewer</groupId>
+							<artifactId>cbsviewer</artifactId>
+							<excludes />
+						</overlay>
+						<overlay>
+							<!-- empty groupId/artifactId represents the current build -->
+						</overlay>
+					</overlays>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.jasig.maven</groupId>
+										<artifactId>sass-maven-plugin</artifactId>
+										<versionRange>[1.1.0,)</versionRange>
+										<goals>
+											<goal>update-stylesheets</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
