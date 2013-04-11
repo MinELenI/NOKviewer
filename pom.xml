@@ -124,7 +124,7 @@
 		<defaultGoal>install</defaultGoal>
 		<finalName>${proj.finalname}</finalName>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.jasig.maven</groupId>
 				<artifactId>sass-maven-plugin</artifactId>
 				<version>1.1.0</version>
@@ -156,7 +156,7 @@
 						<debug_info>${debug}</debug_info>
 					</sassOptions>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
