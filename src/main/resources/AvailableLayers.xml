@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Layers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xml.util.cbsviewer.mineleni.nl" xsi:schemaLocation="http://xml.util.cbsviewer.mineleni.nl AvailableLayers.xsd ">
+	<Layerdescriptor>
+		<id>nok2011</id>
+		<name>Begrenzing Natuurmeting Op Kaart 2011</name>
+		<layers>planologischeehs,begrenzing,verwervinginrichting</layers>
+		<url>http://geodata.nationaalgeoregister.nl/nok2011/wms</url>
+		<styles>nok2011_planologischeehs,nok2011_begrenzing,nok2011_verwervinginrichting</styles>
+		<attributes>legenda</attributes>
+	</Layerdescriptor>
+	<Layerdescriptor>
+		<id>nok2010</id>
+		<name>Begrenzing Natuurmeting Op Kaart 2010</name>
+		<layers>ehs,rods,bblbuitenbegrenzing</layers>
+		<url>http://geodata.nationaalgeoregister.nl/nok2010/wms</url>
+		<styles>nok_ehs,nok_rods,nok_bblbuiten</styles>
+		<attributes>legenda</attributes>
+	</Layerdescriptor>
+</Layers>

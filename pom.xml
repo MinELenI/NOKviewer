@@ -51,7 +51,7 @@
 	</prerequisites>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<proj.finalname>${project.artifactId}</proj.finalname>
+		<proj.finalname>nokviewer</proj.finalname>
 		<jdk.version>1.7</jdk.version>
 		<github.username />
 		<github.password />
@@ -94,7 +94,7 @@
 							<webAppConfig>
 								<baseResource
 									implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-									<resourcesAsCSV>src/main/webapp,target/cbsviewer</resourcesAsCSV>
+									<resourcesAsCSV>src/main/webapp</resourcesAsCSV>
 								</baseResource>
 								<sessionHandler
 									implementation="org.eclipse.jetty.server.session.SessionHandler">

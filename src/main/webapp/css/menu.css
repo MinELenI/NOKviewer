@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+
+.nokmenu {
+	z-index: 1005;
+	position: absolute;
+	left: 3px;
+	top: 150px;
+	padding-right: 5px;
+	background-color: rgba(0, 60, 136, .8);
+	color: #fff;
+	border: 1px solid #aaa;
+}
+
+@media print {
+	.nokmenu {
+		display: none;
+	}
+}
+
+html.js .nokmenu {
+	top: -1px;
+}
+
+.nokmenu a {
+	color: #fff;
+}
+
+.nokmenu a:active,.nokmenu a:hover {
+	color: #ff00ff;
+}
+
+.nokmenu ul {
+	margin: 2px;
+}
+
+#legenda {
+	display: inline-block;
+}
+
+#legenda img {
+	display: block;
+}
+
+#downloadLink a {
+	background: transparent url(../img/opendata.png) 0px 1px no-repeat;
+	padding-left: 18px;
+}

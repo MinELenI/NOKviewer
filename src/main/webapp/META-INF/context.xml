@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <Context privileged="false" cookies="false">
+   <Valve className="org.apache.catalina.valves.AccessLogValve" prefix="nokviewer_access_log." suffix=".log" pattern="common" />
+   <Logger className="org.apache.catalina.logger.FileLogger" prefix="nokviewer_log" suffix=".log" timestamp="true" />
+ </Context>
