@@ -67,14 +67,9 @@
 	<jsp:include page="WEB-INF/jsp/footer_include.jsp" />
 	<div class="page">
 		<div class="header">
-			<div class="h1">
-				<c:url value="/index.jsp" var="indexLink">
-					<c:param name="coreonly" value="${param.coreonly}" />
-				</c:url>
-				<a href="${fn:escapeXml(indexLink)}"  name="top">
-					<img src="img/logo.png" alt="Natuur op Kaart"/>
-				</a>
-			</div>
+			<h1 class="h1">
+				<img src="img/logo.png" alt="Dienst Landelijk Gebied | Ministerie van Economische Zaken, Landbouw en Innvovatie" />
+			</h1>
 			<div class="mainMenu">
 				<ul>
 					<li>

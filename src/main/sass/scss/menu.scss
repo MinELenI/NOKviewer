@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
 
 @import 'colours';
+@import 'overrides';
 
 $ControlBorder: 1px solid $ControlBorderColour;
 
@@ -21,16 +22,11 @@ $ControlBorder: 1px solid $ControlBorderColour;
 	}
 }
 
-html.js .nokmenu {
-	top: -1px;
-}
-
 .nokmenu a {
 	color: #fff;
-}
-
-.nokmenu a:active,.nokmenu a:hover {
-	color: #ff00ff;
+	&:hover,&:active{
+		color: rgb(255, 165, 0);
+	}
 }
 
 .nokmenu ul {
@@ -40,12 +36,4 @@ html.js .nokmenu {
 #downloadLink a {
 	background: transparent url(../img/opendata.png) 0px 1px no-repeat;
 	padding-left: 18px;
-}
-
-#zoekContainer fieldset {
-	background-color: $BlueColourTransp;
-	background-image: none;
-	border-radius: 0 0 3px 0;
-	padding: 6px 0 6px 35px;
-	border: none;
 }
