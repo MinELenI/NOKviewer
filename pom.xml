@@ -160,14 +160,16 @@
 					<filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
 					<overlays>
 						<overlay>
+							<!-- empty groupId/artifactId represents the current build -->
+						</overlay>
+						<overlay>
+							<id>cbs</id>
 							<groupId>nl.cbs.cbsviewer</groupId>
 							<artifactId>cbsviewer</artifactId>
 							<excludes>
-								<exclude>**/title-bg.png</exclude>
+								<exclude>**/new/img_CBSLogo.png</exclude>
+								<exclude>**/menu.css</exclude>
 							</excludes>
-						</overlay>
-						<overlay>
-							<!-- empty groupId/artifactId represents the current build -->
 						</overlay>
 					</overlays>
 				</configuration>
