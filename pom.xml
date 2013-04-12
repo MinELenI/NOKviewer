@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	<version>0.2-SNAPSHOT</version>
 	<name>NOKviewer Webapp</name>
-	<description>Webrichtlijnen compliant webmap viewer voor de NOK.</description>
+	<description>Webrichtlijnen compliant webmap viewer voor de Natuurmeting op Kaart.</description>
 	<url>http://mineleni.github.com/${project.artifactId}</url>
 	<inceptionYear>2013</inceptionYear>
 	<organization>
@@ -121,7 +121,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<defaultGoal>install</defaultGoal>
+		<defaultGoal>package</defaultGoal>
 		<finalName>${proj.finalname}</finalName>
 		<plugins>
 			<!-- <plugin>
@@ -163,11 +163,14 @@
 				<version>2.3</version>
 				<configuration>
 					<useCache>true</useCache>
+					<filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
 					<overlays>
 						<overlay>
 							<groupId>nl.cbs.cbsviewer</groupId>
 							<artifactId>cbsviewer</artifactId>
-							<excludes />
+							<excludes>
+								<exclude>**/title-bg.png</exclude>
+							</excludes>
 						</overlay>
 						<overlay>
 							<!-- empty groupId/artifactId represents the current build -->

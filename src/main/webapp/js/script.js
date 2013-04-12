@@ -3,7 +3,7 @@
  */
 
 // multiple versions of JQuery/JQuery UI can cause problems.
-jQuery.noConflict();
+//jQuery.noConflict();
 
 /**
  * document onload event handling.
@@ -22,20 +22,24 @@ jQuery(document)
 
 					/* popup */
 					jQuery('.fancybox').fancybox();
-					
+
 					/* slidedown effect */
 					var settings_head = jQuery('.settingsPanel > li > a');
 					settings_head.first().addClass('active').next().slideDown('normal');
-					jQuery('#legenda').css('max-height', jQuery(window).height() - 500); //todo: compute height on click
-					
+					jQuery('#legenda').css('max-height', jQuery(window).height() - 500); // todo:
+																							// compute
+																							// height
+																							// on
+																							// click
+
 					settings_head.on('click', function(event) {
-						event.preventDefault();						
+						event.preventDefault();
 						jQuery(this).next().stop(true, true).slideToggle('normal');
 						if (jQuery(this).attr('class') != 'active') {
 							jQuery(this).addClass('active');
 						} else {
 							jQuery(this).removeClass('active');
-						}						
+						}
 					});
 
 					var menuAccordion_head = jQuery('.menuAccordion > li > .accordionheader'), menuAccordion_body = jQuery('.menuAccordion li > .menuAccordionContent');
@@ -52,52 +56,20 @@ jQuery(document)
 					});
 				});
 
-				
-jQuery('.nokmenu a').click(function(event) {
-	event.preventDefault();
-	// only load new themes
-	if (jQuery(this).attr('name') != config.defaultMapId && jQuery(this).attr('class') != 'accordionheader') {
-		var _id = jQuery(this).attr('name');
-
-		var maps = jQuery.grep(_layers, function(n, i) {
-			return n.id == _id;
-		});
-		Viewer.loadWMS(maps[0]);
-		// bijwerken pagina titel
-		jQuery('title').html(OpenLayers.i18n('KEY_KAART_TITEL', {
-			'0' : '' + maps[0].name
-		}));
-		jQuery('#pagSubTitle').html(OpenLayers.i18n('KEY_KAART_TITEL', {
-			'0' : '' + maps[0].name
-		}));
-
-		// bijwerken download link
-		if (maps[0].link) {
-			jQuery('#downloadLink').html('<a href="' + maps[0].link + '">' + OpenLayers.i18n('KEY_KAART_TITEL', {
-				'0' : '' + maps[0].name
-			}) + '</a>');
-		} else {
-			jQuery('#downloadLink').html('');
-		}
-
-		config.defaultMapId = _id;
-	}
-});
-
 /**
  * Change theme from menu
  * 
  * @param event
  *            DOM click event
  */
-jQuery('.megaMenu a').click(
+jQuery('.nokmenu a').click(
 		function(event) {
 			event.preventDefault();
 			// only load new themes
-			if (jQuery(this).attr('name') != config.defaultMapId 
-				&& jQuery(this).attr('href') != '#'
-				&& jQuery(this).attr('class') != 'accordionheader') {
-				
+			// only load new themes
+			if (jQuery(this).attr('name') != config.defaultMapId && jQuery(this).attr('href') != '#'
+					&& jQuery(this).attr('class') != 'accordionheader') {
+
 				var _id = jQuery(this).attr('name');
 
 				var maps = jQuery.grep(_layers, function(n, i) {
@@ -123,9 +95,6 @@ jQuery('.megaMenu a').click(
 					jQuery('#downloadLink').html('');
 				}
 
-				// close menu
-				jQuery('.navDropDown').css('left', '-9999px');
-				
 				config.defaultMapId = _id;
 			}
 		});

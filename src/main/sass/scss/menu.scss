@@ -1,14 +1,18 @@
 @CHARSET "UTF-8";
 
+@import 'colours';
+
+$ControlBorder: 1px solid $ControlBorderColour;
+
 .nokmenu {
 	z-index: 1005;
 	position: absolute;
 	left: 3px;
 	top: 150px;
 	padding-right: 5px;
-	background-color: rgba(0, 60, 136, .8);
+	background-color: $BlueColourTransp;
 	color: #fff;
-	border: 1px solid #aaa;
+	border: $ControlBorder;
 }
 
 @media print {
@@ -33,15 +37,15 @@ html.js .nokmenu {
 	margin: 2px;
 }
 
-#legenda {
-	display: inline-block;
-}
-
-#legenda img {
-	display: block;
-}
-
 #downloadLink a {
 	background: transparent url(../img/opendata.png) 0px 1px no-repeat;
 	padding-left: 18px;
+}
+
+#zoekContainer fieldset {
+	background-color: $BlueColourTransp;
+	background-image: none;
+	border-radius: 0 0 3px 0;
+	padding: 6px 0 6px 35px;
+	border: none;
 }
