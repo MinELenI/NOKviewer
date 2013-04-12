@@ -3,7 +3,7 @@
  */
 
 // multiple versions of JQuery/JQuery UI can cause problems.
-//jQuery.noConflict();
+jQuery.noConflict();
 
 /**
  * document onload event handling.
@@ -26,12 +26,8 @@ jQuery(document)
 					/* slidedown effect */
 					var settings_head = jQuery('.settingsPanel > li > a');
 					settings_head.first().addClass('active').next().slideDown('normal');
-					jQuery('#legenda').css('max-height', jQuery(window).height() - 500); // todo:
-																							// compute
-																							// height
-																							// on
-																							// click
-
+					// todo: compute height on click
+					jQuery('#legenda').css('max-height', jQuery(window).height() - 500); 
 					settings_head.on('click', function(event) {
 						event.preventDefault();
 						jQuery(this).next().stop(true, true).slideToggle('normal');

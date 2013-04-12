@@ -94,7 +94,7 @@
 							<webAppConfig>
 								<baseResource
 									implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-									<resourcesAsCSV>src/main/webapp</resourcesAsCSV>
+									<resourcesAsCSV>src/main/webapp,target/${proj.finalname}</resourcesAsCSV>
 								</baseResource>
 								<sessionHandler
 									implementation="org.eclipse.jetty.server.session.SessionHandler">
