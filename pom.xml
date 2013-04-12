@@ -64,12 +64,6 @@
 	</properties>
 	<profiles>
 		<profile>
-			<id>jenkins</id>
-			<properties>
-				<github.global.server>github</github.global.server>
-			</properties>
-		</profile>
-		<profile>
 			<id>developer</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
