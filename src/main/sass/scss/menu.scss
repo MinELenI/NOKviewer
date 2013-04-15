@@ -3,7 +3,7 @@
 @import 'colours';
 @import 'overrides';
 
-$ControlBorder: 1px solid $ControlBorderColour;
+$ControlBorder: 1px solid $ControlBorderColour ;
 
 .nokmenu {
 	z-index: 1005;
@@ -23,12 +23,12 @@ $ControlBorder: 1px solid $ControlBorderColour;
 }
 
 .nokmenu a {
-	color: #fff;
-	&:hover,&:active{
+	color: #fff; 
+	&:hover, &:active { 
 		color: rgb(255, 165, 0);
-	}
 }
 
+}
 .nokmenu ul {
 	margin: 2px;
 }
@@ -36,4 +36,8 @@ $ControlBorder: 1px solid $ControlBorderColour;
 #downloadLink a {
 	background: transparent url(../img/opendata.png) 0px 1px no-repeat;
 	padding-left: 18px;
+}
+
+.metadata {
+	
 }

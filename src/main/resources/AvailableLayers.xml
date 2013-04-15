@@ -8,6 +8,7 @@
 		<url>http://geodata.nationaalgeoregister.nl/nok2011/wms</url>
 		<styles>nok2011_planologischeehs,nok2011_begrenzing,nok2011_verwervinginrichting</styles>
 		<attributes>legenda</attributes>
+		<metadata>http://nationaalgeoregister.nl/geonetwork/srv/dut/search#|a04269ca-6667-4d7a-9dda-160cf04344cf</metadata>
 	</Layerdescriptor>
 	<Layerdescriptor>
 		<id>nok2010</id>
@@ -16,5 +17,15 @@
 		<url>http://geodata.nationaalgeoregister.nl/nok2010/wms</url>
 		<styles>nok_ehs,nok_rods,nok_bblbuiten</styles>
 		<attributes>legenda</attributes>
+		<metadata>http://nationaalgeoregister.nl/geonetwork/srv/dut/search#|f1df4003-d861-4014-b9ce-1d93414f183a</metadata>
+	</Layerdescriptor>
+	<Layerdescriptor>
+		<id>nok2007</id>
+		<name>Begrenzing Nulmeting Op Kaart 2007</name>
+		<layers>ehs,rods,bblbuitenbegrenzing</layers>
+		<url>http://geodata.nationaalgeoregister.nl/nok2007/wms</url>
+		<styles>nok2007_ehs,nok2007_rods,nok2007_bblbuiten</styles>
+		<attributes>legenda</attributes>
+		<metadata>http://nationaalgeoregister.nl/geonetwork/srv/dut/search#|a112fbc5-1aec-42b2-ae2e-600eb1aebebe</metadata>
 	</Layerdescriptor>
 </Layers>
