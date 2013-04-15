@@ -18,17 +18,17 @@
 
 		<ul>
 			<c:forEach items="${layers}" var="layer">
-				<li><c:url value="/index.jsp" var="adreslink">
+				<li><c:url value="/index.jsp" var="link">
 						<c:param name="gevonden" value="${adres}" />
 						<c:param name="xcoord" value="${adres.xCoord}" />
 						<c:param name="ycoord" value="${adres.yCoord}" />
 						<c:param name="straal" value="${adres.radius}" />
 						<c:param name="coreonly" value="${param.coreonly}" />
 						<c:param name="mapid" value="${layer.id}" />
-					</c:url> <a href="${fn:escapeXml(adreslink)}" name="${layer.id}">Toon
-						${layer.name}</a> <c:if test="${not empty layer.metadata}">
-						(<a href="${layer.metadata}" name="Metadata voor ${layer.name}"
-							class="metadata">metadata</a>)
+					</c:url> <a href="${fn:escapeXml(link)}" name="${layer.id}" class="switchlayer">Toon
+						${layer.name}</a> <c:if test="${not empty layer.metadata}"><span class="metadata">
+						(<a href="${fn:escapeXml(layer.metadata)}" name="Metadata voor ${layer.name}"
+							 target="_blank">metadata</a>)</span>
 					</c:if></li>
 			</c:forEach>
 		</ul>

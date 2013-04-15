@@ -58,7 +58,7 @@ jQuery(document)
  * @param event
  *            DOM click event
  */
-jQuery('.nokmenu a').click(
+jQuery(' a .switchlayer').click(
 		function(event) {
 			event.preventDefault();
 			// only load new themes
