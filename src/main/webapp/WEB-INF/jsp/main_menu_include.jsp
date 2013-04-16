@@ -25,11 +25,23 @@
 						<c:param name="straal" value="${adres.radius}" />
 						<c:param name="coreonly" value="${param.coreonly}" />
 						<c:param name="mapid" value="${layer.id}" />
-					</c:url> <a href="${fn:escapeXml(link)}" name="${layer.id}" class="switchlayer">Toon
-						${layer.name}</a> <c:if test="${not empty layer.metadata}"><span class="metadata">
-						(<a href="${fn:escapeXml(layer.metadata)}" name="Metadata voor ${layer.name}"
-							 target="_blank">metadata</a>)</span>
-					</c:if></li>
+					</c:url> 
+					
+					<fmt:message key="KEY_MENU_METADATA_TITEL" var="abbr">
+						<fmt:param value="${layer.name}" />
+					</fmt:message> 
+					
+					<a href="${fn:escapeXml(link)}" name="${layer.id}"
+					class="switchlayer">Toon ${layer.name}</a>
+					
+					<c:if
+						test="${not empty layer.metadata}">
+						(<a href="${fn:escapeXml(layer.metadata)}" 
+							target="_blank" class="metadata">
+							<abbr title="${abbr}">metadata</abbr>
+						</a>)
+					</c:if>
+				</li>
 			</c:forEach>
 		</ul>
 
