@@ -104,7 +104,7 @@
 			</div>
 			<jsp:include page="WEB-INF/jsp/zoekformulier.jsp"/>
 			<div class="pagetitle">				
-				<h3 id="pagSubTitle"><fmt:message key="KEY_KAART_TITEL"><fmt:param value="${mapname}" /></fmt:message></h3>
+				<h2 id="pagSubTitle"><fmt:message key="KEY_KAART_TITEL"><fmt:param value="${mapname}" /></fmt:message></h2>
 			</div>
 			<div class="clearer"></div>			
         </div>	
@@ -147,7 +147,7 @@
 				</li>
 				<li id="keyfeatureinfo" class="featureinfoPanel">
 					<a href="#keyfeatureinfo"><fmt:message key="KEY_INFO_TITEL" /></a>
-					<div id="featureinfo" class="settingsContent" style="max-height:100px">
+					<div id="featureinfo" class="settingsContent">
 						<c:if test="${param.coreonly==true}">
 							<c:if test="${not empty featureinfo}">
 								<c:out value="${featureinfo}" escapeXml="false" />
