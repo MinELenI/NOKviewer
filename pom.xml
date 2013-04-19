@@ -132,6 +132,25 @@
 		<finalName>${proj.finalname}</finalName>
 		<plugins>
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+				<version>1.2</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>create</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<doCheck>false</doCheck>
+					<doUpdate>false</doUpdate>
+					<timestampFormat>{0,date,yyyy-MM-dd HH:mm}</timestampFormat>
+					<shortRevisionLength>10</shortRevisionLength>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.jasig.maven</groupId>
 				<artifactId>sass-maven-plugin</artifactId>
 				<version>1.1.0</version>
@@ -185,6 +204,21 @@
 							</excludes>
 						</overlay>
 					</overlays>
+					<archive>
+						<forced>true</forced>
+						<index>true</index>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addClasspath>true</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Implementation-Build>branch: ${scmBranch} rev: ${buildNumber} timestamp: ${timestamp}</Implementation-Build>
+							<SCM-Revision>${buildNumber}</SCM-Revision>
+							<url>${project.url}</url>
+							<release>${project.version}</release>
+						</manifestEntries>
+					</archive>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -312,6 +346,22 @@
 						<phase>site-deploy</phase>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<pushChanges>false</pushChanges>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
 			</plugin>
 		</plugins>
 		<pluginManagement>
