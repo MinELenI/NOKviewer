@@ -6,7 +6,7 @@
 	<artifactId>NOKviewer</artifactId>
 	<packaging>war</packaging>
 	<version>0.2-SNAPSHOT</version>
-	<name>NOKviewer Webapp</name>
+	<name>Natuurmeting op kaart viewer</name>
 	<description>Webrichtlijnen compliant webmap viewer voor de Natuurmeting op Kaart.</description>
 	<url>http://mineleni.github.com/${project.artifactId}</url>
 	<inceptionYear>2013</inceptionYear>
