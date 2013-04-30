@@ -87,7 +87,7 @@
 						<c:url value="/faq.jsp" var="faqLink">
 							<c:param name="coreonly" value="${param.coreonly}" />
 						</c:url>
-						<a class="fancybox fancybox.ajax" href="${fn:escapeXml(faqLink)}"><fmt:message key="KEY_MENU_HELP" /></a>
+						<a class="fancybox fancybox.ajax" href="${fn:escapeXml(faqLink)}" rel="help"><fmt:message key="KEY_MENU_HELP" /></a>
 					</li>
 					<li>
 						<c:url value="/download.jsp" var="downloadLink">
@@ -103,13 +103,13 @@
 				</ul>
 			</div>
 			<jsp:include page="WEB-INF/jsp/zoekformulier.jsp"/>
-			<div class="pagetitle">				
+			<div class="pagetitle">
 				<h2 id="pagSubTitle"><fmt:message key="KEY_KAART_TITEL"><fmt:param value="${mapname}" /></fmt:message></h2>
 			</div>
-			<div class="clearer"></div>			
-        </div>	
+			<div class="clearer"></div>
+		</div>
 
-		<div id="inhoud">	
+		<div id="inhoud">
 			<div id="coreContainer" class="kaartContainer">
 				<!-- hier komt de statische kaart -->
 				<c:if test="${not empty kaart}">
@@ -127,7 +127,7 @@
 					<!-- hier wordt de dynamische kaart ingehangen -->
 				</div>
 			</div>
-			
+
 			<ul class="settingsPanel">
 				<li id="keylegend" class="legendPanel">
 					<a href="#keylegend"><fmt:message key="KEY_LEGENDA_TITEL" /></a>
@@ -156,7 +156,7 @@
 					</div>
 				</li>
 			</ul>		
-			<jsp:include page="WEB-INF/jsp/main_menu_include.jsp" />					
+			<jsp:include page="WEB-INF/jsp/main_menu_include.jsp" />
 		</div>
 	</div>	
 

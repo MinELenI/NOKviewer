@@ -24,7 +24,8 @@ $ControlBorder: 1px solid $ControlBorderColour ;
 
 .nokmenu a {
 	color: #fff; 
-	&:hover, &:active { 
+	&:hover, 
+	&:active { 
 		color: rgb(255, 165, 0);
 }
 
@@ -41,4 +42,7 @@ $ControlBorder: 1px solid $ControlBorderColour ;
 .metadata {
 	background: transparent url(../img/metadata.png) 0px 1px no-repeat;
 	padding-left: 18px;
+}
+
+.extern {
 }

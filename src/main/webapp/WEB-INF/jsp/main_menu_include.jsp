@@ -29,15 +29,23 @@
 					
 					<fmt:message key="KEY_MENU_METADATA_TITEL" var="abbr">
 						<fmt:param value="${layer.name}" />
+					</fmt:message>
+					<fmt:message key="KEY_MENU_DATA_TITEL" var="dataTtl">
+						<fmt:param value="${layer.name}" />
 					</fmt:message> 
 					
 					<a href="${fn:escapeXml(link)}" name="${layer.id}"
-					class="switchlayer">Toon ${layer.name}</a>
+					class="switchlayer">${dataTtl}</a>
 					
 					<c:if
 						test="${not empty layer.metadata}">
+						<!-- NB. ondanks dat het target attribuut niet geldig 
+						is in xhtml4 gebruiken we dat hier expres toch. 
+						In html5 is het attribuut weer hersteld, 
+						zie: http://dev.w3.org/html5/markup/a.html -->
 						(<a href="${fn:escapeXml(layer.metadata)}" 
-							target="_blank" class="metadata">
+							target="_blank" class="metadata extern"
+							rel="appendix">
 							<abbr title="${abbr}">metadata</abbr>
 						</a>)
 					</c:if>
