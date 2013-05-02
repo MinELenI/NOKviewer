@@ -68,7 +68,7 @@
 	<div class="page">
 		<div class="header">
 			<h1 class="h1">
-				<img src="img/logo.png" alt="Dienst Landelijk Gebied | Ministerie van Economische Zaken, Landbouw en Innvovatie" />
+				<img src="img/logo.png" alt="Dienst Landelijk Gebied | Ministerie van Economische Zaken" />
 			</h1>
 			<div class="mainMenu">
 				<ul>
