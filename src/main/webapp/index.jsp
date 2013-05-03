@@ -64,7 +64,14 @@
 </head>
 
 <body>
-	<jsp:include page="WEB-INF/jsp/footer_include.jsp" />
+	<c:if test="${param.coreonly!=true}">
+		<fmt:message key="KEY_BROWSERERROR" var="browser_error"/>
+		<![CDATA[
+		<!--[if lte IE 8]><p class="error"><a href="?coreonly=true">${browser_error}</a></p><![endif]-->
+		]]>
+	</c:if>
+
+
 	<div class="page">
 		<div class="header">
 			<h1 class="h1">
@@ -159,6 +166,8 @@
 			<jsp:include page="WEB-INF/jsp/main_menu_include.jsp" />
 		</div>
 	</div>	
+
+	<jsp:include page="WEB-INF/jsp/footer_include.jsp" />
 
 	<c:if test="${param.coreonly!=true}">
 		<!-- scripts als laatste laden -->

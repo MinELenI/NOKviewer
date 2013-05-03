@@ -17,8 +17,7 @@
             <h2 class="subtitel">Kaartkeuze</h2>
             
             <div class="kaartkeuze_wrapper">
-                
-                <div class="kaartkeuze">
+            <div class="kaartkeuze">
                 <ul class="menu">
                     <li class="list">
                         <a class="category" href="#">Maak een keuze&amp;nbsp;&amp;nbsp;&amp;raquo;</a>
@@ -58,9 +57,9 @@
                             </li>
                         </c:forEach>
                     </ul>
-                        </li>
+                    </li>
                 </ul>
-                    </div>
+                </div>
             </div>
         </div>
 </jsp:root>
