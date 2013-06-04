@@ -20,7 +20,7 @@ $magicLineHeight: 25px;
 	z-index: 1005;
 	position: absolute;
 	left: 3px;
-	top: 150px;
+	top: 160px;
 	padding-right: $magicPadding;
 	background-color: $BlueColour;
 	background-color: $BlueColourTransp;
@@ -81,26 +81,24 @@ ul.menu {
 		float: left;
 		width: $magicWidth;
 		margin: -$magicOffscreenMargin $magicWidth/-2 0 0;
+		
+		& a.category {
+			position: relative;
+			z-index: 50;
+			display: block;
+			float: left;
+			width: $magicWidth/2 - $magicPadding;
+			margin-top: $magicOffscreenMargin;
+			background: transparent;
+		
+			&:hover,
+			&:focus,
+			&:active {
+				margin-right:1px;
+			}
+		}
 	}
 }
-
-ul.menu li.list a.category {
-	position: relative;
-	z-index: 50;
-	display: block;
-	float: left;
-	width: $magicWidth/2 - $magicPadding;
-	margin-top: $magicOffscreenMargin;
-	background: transparent;
-
-	&:hover,
-	&:focus,
-	&:active {
-		margin-right:1px;
-	}
-}
-
-
 
 ul.kaartkeuzelijst {
 	float: left; 
