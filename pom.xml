@@ -201,6 +201,7 @@
 							<excludes>
 								<exclude>**/new/img_CBSLogo.png</exclude>
 								<exclude>**/menu.css</exclude>
+								<exclude>main_menu_theme2_include.jsp</exclude>
 							</excludes>
 						</overlay>
 					</overlays>
