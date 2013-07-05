@@ -37,6 +37,7 @@ config.map = {
 	width : 610,
 
 	topoWMTS : {
+		/*
 		url : 'http://geodata.nationaalgeoregister.nl/tiles/service/wmts/brtachtergrondkaart/',
 		layer : "brtachtergrondkaart",
 		matrixSet : 'EPSG:28992',
@@ -45,6 +46,15 @@ config.map = {
 				'EPSG:28992:12', 'EPSG:28992:13' ],
 		format : 'image/png8',
 		style : '_null'
+		*/
+		url : 'http://www.openbasiskaart.nl/mapcache/wmts/',
+		layer : "osm-nb",
+		matrixSet : 'rd',
+		matrixIds : [ '0', '1', '2', '3', '4', '5',
+				'6', '7', '8', '9', '10', '11',
+				'12', '13' ],
+		format : 'image/png',
+		style : 'default'
 	},
 
 	aerialWMTS : {

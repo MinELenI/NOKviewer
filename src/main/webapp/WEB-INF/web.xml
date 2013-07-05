@@ -36,6 +36,7 @@
 		<servlet-class>nl.mineleni.cbsviewer.servlet.wms.WMSClientServlet</servlet-class>
 		<!-- NB. deze pdok service is alleen voor whitelisted IP's beschikbaar. 
 			Voor een alternatief (wheregroup.com) zie hieronder. -->
+		<!--
 		<init-param>
 			<description>WMS capabilities url van achtergrond (topografie) kaart</description>
 			<param-name>bgCapabilitiesURL</param-name>
@@ -51,6 +52,7 @@
 					top10nlspoorbaandeellijnen,top10nlwaterdeellijnen, top10nlwaterdeelvlakken, points,countries,
 					top250nllijnen,lines,borders, top250nlvlakken,builtup_areas,polygons,shorelines, ondergrond</param-value>
 		</init-param>
+		-->
 		<!-- Alternatieve basemap van WhereGroup, voor ontwikkeldoeleinden. 
 			zie: http://www.wheregroup.com/de/osmwms -->
 		<!--
@@ -70,6 +72,18 @@
 				Naherholungsgebiet,Park,unkultiviertes_Land,Gruenflaeche,Bauland,Industriegebiet,Landwirtschaft,Grenzen</param-value>
 		</init-param>
 		-->
+		<init-param>
+			<description>WMS capabilities url van achtergrond (topografie) kaart</description>
+			<param-name>bgCapabilitiesURL</param-name>
+			<param-value>http://www.openbasiskaart.nl/mapcache/?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities</param-value>
+		</init-param>
+		<init-param>
+			<description>lagen voor de achtergrond (topografie) WMS (CSV), 
+					in volgorde "bovenste" laag eerste, "onderste" laag als laatste in de lijst. 
+					Indien leeg dan worden alle lagen uit het capabilities document gebruikt.</description>
+			<param-name>bgWMSlayers</param-name>
+			<param-value>osm-nb</param-value>
+		</init-param>
 		<init-param>
 			<description>WMS capabilities url van achtergrond luchtfoto's</description>
 			<param-name>lufoCapabilitiesURL</param-name>
