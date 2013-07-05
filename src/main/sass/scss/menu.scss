@@ -19,7 +19,7 @@ $magicLineHeight: 25px;
 .nokmenu {
 	z-index: 1005;
 	position: absolute;
-	left: 3px;
+	left: 1px;
 	top: 160px;
 	padding-right: $magicPadding;
 	background-color: $BlueColour;
@@ -27,6 +27,7 @@ $magicLineHeight: 25px;
 	color: #fff;
 	border: $ControlBorder;
 	min-width: $magicWidth /2 ;
+	@include border-right-radius(3px);
 }
 
 @media print {

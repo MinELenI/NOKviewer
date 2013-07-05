@@ -98,17 +98,19 @@
 						</c:url>
 						<a class="fancybox fancybox.ajax" href="${fn:escapeXml(faqLink)}" rel="help"><fmt:message key="KEY_MENU_HELP" /></a>
 					</li>
+					<!--
 					<li>
 						<c:url value="/download.jsp" var="downloadLink">
 							<c:param name="coreonly" value="${param.coreonly}" />
 						</c:url>
 						<a class="fancybox fancybox.ajax" href="${fn:escapeXml(downloadLink)}"><fmt:message key="KEY_MENU_DOWNLOAD" /></a>
 					</li>
+					-->
 					<!-- div id downloadlink contains image -->
-					<!--c:if test="${not empty downloadLink}">
+					<c:if test="${not empty downloadLink}">
 						<fmt:message var="linkText" key="KEY_LINK_DOWNLOAD"><fmt:param value="${mapname}" /></fmt:message>
 						<li><a href="${fn:escapeXml(downloadLink)}"><c:out value="${linkText}" /></a></li>
-					</c:if-->
+					</c:if>
 				</ul>
 			</div>
 			<jsp:include page="WEB-INF/jsp/zoekformulier.jsp"/>

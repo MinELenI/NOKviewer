@@ -15,12 +15,27 @@
 	padding: 0;
 	margin: 0;
 }
+.page .header .mainMenu {
+	left: 500px;
+}
+
+#zoekContainer {
+	background-image: none;
+	width: 500px;
+	top: 83px;
+}
 
 #zoekContainer fieldset {
 	background-color: $BlueColour;
 	background-image: none;
-	border-radius: 0 0 3px 0;
-	padding: 6px 0 6px 35px;
+	@include border-right-radius(3px);
+	padding: 6px 0 6px 1px;
+	height: 34px;
 	border: none;
 	width: auto;
+}
+
+#footerWrapper {
+	width: 500px;
+	@include border-right-radius(3px);
 }
