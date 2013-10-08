@@ -10,56 +10,64 @@
 
 	<fmt:setBundle basename="LabelsBundle" />
 
-	<jsp:scriptlet>AvailableLayersBean layers = new AvailableLayersBean();
-			request.setAttribute("layers", layers.getLayers());</jsp:scriptlet>
+	<jsp:scriptlet>
+		AvailableLayersBean layers = new AvailableLayersBean();
+		request.setAttribute("layers", layers.getLayers());
+	</jsp:scriptlet>
 
-        <div class="nokmenu" id="NOKmenu">
-            <h2 class="subtitel">Kaartkeuze</h2>
-            
-            <div class="kaartkeuze_wrapper">
-            <div class="kaartkeuze">
-                <ul class="menu">
-                    <li class="list">
-                        <a class="category" href="#">Maak een keuze&amp;nbsp;&amp;nbsp;&amp;raquo;</a>
+	<div class="nokmenu" id="NOKmenu">
+		<h2 class="subtitel">Kaartkeuze</h2>
 
-                    <ul class="kaartkeuzelijst">
-                        <c:forEach items="${layers}" var="layer">
-                            <li><c:url value="/index.jsp" var="link">
-                                    <c:param name="gevonden" value="${adres}" />
-                                    <c:param name="xcoord" value="${adres.xCoord}" />
-                                    <c:param name="ycoord" value="${adres.yCoord}" />
-                                    <c:param name="straal" value="${adres.radius}" />
-                                    <c:param name="coreonly" value="${param.coreonly}" />
-                                    <c:param name="mapid" value="${layer.id}" />
-                                </c:url> 
+		<div class="kaartkeuze_wrapper">
+			<ul class="nav">
+				<li class="link"><a class="main" href="#">Maak een
+						keuze uit de lijst&amp;nbsp;&amp;nbsp;&amp;raquo;</a>
+					<ul>
 
-                                <fmt:message key="KEY_MENU_METADATA_TITEL" var="abbr">
-                                    <fmt:param value="${layer.name}" />
-                                </fmt:message>
-                                <fmt:message key="KEY_MENU_DATA_TITEL" var="dataTtl">
-                                    <fmt:param value="${layer.name}" />
-                                </fmt:message> 
+						<c:forEach items="${layers}" var="layer">
 
-                                <a href="${fn:escapeXml(link)}" name="${layer.id}"
-                                   class="switchlayer">${dataTtl}</a>
-                                <!-- NB. ondanks dat het target attribuut niet geldig 
-                                        is in xhtml4 gebruiken we dat hier expres toch. 
-                                        In html5 is het attribuut weer in ere hersteld, 
-                                        zie: http://dev.w3.org/html5/markup/a.html -->
-                                <!--
-                                <c:if
-                                    test="${not empty layer.metadata}">
-                                    (<a href="${fn:escapeXml(layer.metadata)}" 
-                                            target="_blank" class="metadata extern"
-                                            rel="appendix"><abbr title="${abbr}">metadata</abbr></a>)
-                                </c:if>
-                                -->
-                            </li>
-                        </c:forEach>
-                    </ul>
-                    </li>
-                </ul>
-                </div>
-            </div>
-        </div>
+							<li class="sub">
+								<c:url value="/index.jsp" var="link">
+									<c:param name="gevonden" value="${adres}" />
+									<c:param name="xcoord" value="${adres.xCoord}" />
+									<c:param name="ycoord" value="${adres.yCoord}" />
+									<c:param name="straal" value="${adres.radius}" />
+									<c:param name="coreonly" value="${param.coreonly}" />
+									<c:param name="mapid" value="${layer.id}" />
+								</c:url>
+								<fmt:message key="KEY_MENU_METADATA_TITEL" var="abbr">
+									<fmt:param value="${layer.name}" />
+								</fmt:message>
+								<fmt:message key="KEY_MENU_DATA_TITEL" var="dataTtl">
+									<fmt:param value="${layer.name}" />
+								</fmt:message> 
+								<a href="${fn:escapeXml(link)}" name="${layer.id}"
+									class="main switchlayer">${dataTtl}</a> 
+								
+								<c:if test="${not empty layer.metadata}">
+
+									<ul>
+										<li>
+											<!-- NB. ondanks dat het target attribuut niet geldig 
+													is in xhtml4 gebruiken we dat hier expres toch. 
+													In html5 is het attribuut weer in ere hersteld, 
+													zie: http://dev.w3.org/html5/markup/a.html -->
+											<a href="${fn:escapeXml(layer.metadata)}" target="_blank"
+											class="metadata extern" rel="appendix"> 
+												<abbr title="${abbr}">metadata</abbr>
+											</a>
+										</li>
+									</ul>
+
+								</c:if>
+
+							</li>
+
+						</c:forEach>
+
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
 </jsp:root>
