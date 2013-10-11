@@ -20,7 +20,7 @@
 
 		<div class="kaartkeuze_wrapper">
 			<ul class="nav">
-				<li class="link"><a class="main" href="#">Maak een
+				<li class="link"><a id="kaartselector" class="main" href="#">Maak een
 						keuze uit de lijst&amp;nbsp;&amp;nbsp;&amp;raquo;</a>
 					<ul>
 
@@ -53,8 +53,8 @@
 													In html5 is het attribuut weer in ere hersteld, 
 													zie: http://dev.w3.org/html5/markup/a.html -->
 											<a href="${fn:escapeXml(layer.metadata)}" target="_blank"
-											class="metadata extern" rel="appendix"> 
-												<abbr title="${abbr}">metadata</abbr>
+												class="metadata extern" rel="appendix"> 
+												<abbr title="${abbr}">metadata van ${dataTtl}</abbr>
 											</a>
 										</li>
 									</ul>

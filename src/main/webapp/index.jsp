@@ -64,6 +64,7 @@
 </head>
 
 <body>
+	<jsp:include page="WEB-INF/jsp/skiplinks_include.jsp" />
 	<jsp:include page="WEB-INF/jsp/debug_include.jsp" />
 
 	<c:if test="${param.coreonly!=true}">
