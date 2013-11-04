@@ -1,19 +1,20 @@
 @charset "UTF-8";
 
-/* compass css mixins */
+/* compass css mixins. */
 @import 'compass/css3';
 
+/* lokale imports en overrides. */
 @import 'colours';
 @import 'overrides';
 
-$ControlBorder: 1px solid $ControlBorderColour ;
+$ControlBorder: 1px solid $ControlBorderColour;
 /**
  * dropdown nokmenu menu vars.
  */ 
-$magicOffscreenMargin: 32767px ;
-$magicPadding: 5px ;
-$_magicMenuHeigth: 1.563em ;
-$_magicMenuWidth: 15em ;
+$magicOffscreenMargin: 32767px;
+$magicPadding: 5px;
+$_magicMenuHeigth: 1.563em;
+$_magicMenuWidth: 15em;
 
 .nokmenu {
 	z-index: 1005;

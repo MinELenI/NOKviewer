@@ -1,6 +1,4 @@
-/*
-	overrides of cbsviewer styles
-*/
+/* overrides van cbsviewer styles. */
 .settingsPanel {
 	top: 240px;
 	width: 254px;
@@ -30,18 +28,6 @@
 #zoekContainer label {
 	display: inline;
 }
-/*
-#zoekContainer div {
-	background-color: $BlueColour;
-	background-color: $BlueColourTransp;
-	background-image: none;
-	@include border-right-radius(3px);
-	padding: 6px 0 6px 1px;
-	height: 34px;
-	border: none;
-	width: auto;
-}
-*/
 
 #footerWrapper {
 	width: 500px;
