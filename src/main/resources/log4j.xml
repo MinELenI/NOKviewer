@@ -11,7 +11,7 @@
 	</appender>
 	<appender name="rollingFileAppender" class="org.apache.log4j.RollingFileAppender">
 		<param name="Threshold" value="debug" />
-		<param name="File" value="${catalina.home}/logs/cbsviewer.log" />
+		<param name="File" value="${catalina.home}/logs/nokviewer.log" />
 		<param name="Append" value="true" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
