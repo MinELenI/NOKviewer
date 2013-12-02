@@ -23,7 +23,7 @@ config.legendDiv = "legenda";
 config.featureInfoDiv = "featureinfo";
 
 /** default map id, als in AvailableLayers.xml. */
-config.defaultMapId = "nok2011";
+config.defaultMapId = "nok2012";
 
 /** instellingen voor de kaart. Voorlopig alleen RD projectie. */
 config.map = {
@@ -31,7 +31,7 @@ config.map = {
 	restrictedExtent : new OpenLayers.Bounds(0, 300000, 280000, 625000),
 	resolutions : [ 3440.640, 1720.320, 860.160, 430.080, 215.040, 107.520, 53.760, 26.880, 13.440, 6.720, 3.360,
 			1.680, 0.840, 0.420 ],
-	initialZoom : 3,
+	initialZoom : 4,
 	// initiele afmeting van de kaart
 	height : 500,
 	width : 610,

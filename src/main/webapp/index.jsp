@@ -41,7 +41,7 @@
 
 <c:if test="${empty param.mapid}">
 	<!-- default thema kaartlaag -->
-	<c:set value="nok2011" var="mapid" />
+	<c:set value="nok2012" var="mapid" />
 </c:if>
  <c:if test="${not empty param.mapid}">
 	<c:set value="${param.mapid}" var="mapid" />
