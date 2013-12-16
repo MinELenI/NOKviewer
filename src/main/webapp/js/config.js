@@ -23,7 +23,7 @@ config.legendDiv = "legenda";
 config.featureInfoDiv = "featureinfo";
 
 /** default map id, als in AvailableLayers.xml. */
-config.defaultMapId = "nok2012";
+config.defaultMapId = "nok2013";
 
 /** instellingen voor de kaart. Voorlopig alleen RD projectie. */
 config.map = {
