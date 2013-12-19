@@ -46,6 +46,11 @@ $_magicMenuWidth: 15em;
 	padding-left: 18px;
 }
 
+.moreinfo {
+	background: transparent url(../img/moreinfo.png) 0px 1px no-repeat;
+	padding-left: 18px;
+}
+
 .extern {
 	
 }
@@ -82,6 +87,11 @@ $_magicMenuWidth: 15em;
 	overflow: hidden;
 	/* remove the padding that was applied above */
 	padding: 0;
+}
+
+.main.switchlayer:hover, 
+.main.switchlayer:focus {
+	background-color: $BlueColour;
 }
 
 .nav ul {
@@ -169,6 +179,7 @@ $_magicMenuWidth: 15em;
 .nav a:focus,
 .nav a:active {
 	margin-right: 0;
+	background-color: $BlueColour;
 }
 
 .nav ul:hover,
