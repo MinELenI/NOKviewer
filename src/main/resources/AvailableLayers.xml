@@ -9,6 +9,7 @@
 		<styles>nok2013_begrenzing,nok2013_beheer,nok2013_planologischeehs,nok2013_verwervinginrichting</styles>
 		<attributes>legenda</attributes>
 		<metadata>http://www.nationaalgeoregister.nl/geonetwork/srv/dut/search#|87012b95-6e1a-4835-abbf-4f6271b56568</metadata>
+		<moreinfo>http://www.ipo.nl/publicaties/rapport-natuurmeting-op-kaart-beschikbaar</moreinfo>
 	</Layerdescriptor>
 	<Layerdescriptor>
 		<id>nok2012</id>
@@ -18,6 +19,7 @@
 		<styles>nok2012_begrenzing,nok2012_beheer,nok2012_planologischeehs,nok2012_verwervinginrichting</styles>
 		<attributes>legenda</attributes>
 		<metadata>http://www.nationaalgeoregister.nl/geonetwork/srv/dut/search#|3215eaea-d989-41d8-9032-13c74afccbc4</metadata>
+		<moreinfo>http://www.dienstlandelijkgebied.nl/xmlpages/page/dlg/actueel/document/fileitem/2202955</moreinfo>
 	</Layerdescriptor>
 	<Layerdescriptor>
 		<id>nok2011</id>
@@ -27,6 +29,7 @@
 		<styles>nok2011_begrenzing,nok2011_planologischeehs,nok2011_verwervinginrichting</styles>
 		<attributes>legenda</attributes>
 		<metadata>http://nationaalgeoregister.nl/geonetwork/srv/dut/search#|a04269ca-6667-4d7a-9dda-160cf04344cf</metadata>
+		<moreinfo>http://www.dienstlandelijkgebied.nl/actueel/publicaties/rapporten/document/fileitem/2201641</moreinfo>
 	</Layerdescriptor>
 	<Layerdescriptor>
 		<id>nok2010</id>
@@ -36,6 +39,7 @@
 		<styles>nok2010_ehs,nok2010_rods,nok2010_bblbuiten</styles>
 		<attributes>legenda</attributes>
 		<metadata>http://nationaalgeoregister.nl/geonetwork/srv/dut/search#|f1df4003-d861-4014-b9ce-1d93414f183a</metadata>
+		<moreinfo>http://www.dienstlandelijkgebied.nl/actueel/publicaties/rapporten/document/fileitem/2001700</moreinfo>
 	</Layerdescriptor>
 	<Layerdescriptor>
 		<id>nok2007</id>
@@ -45,5 +49,6 @@
 		<styles>nok2007_ehs,nok2007_rods,nok2007_bblbuiten</styles>
 		<attributes>legenda</attributes>
 		<metadata>http://nationaalgeoregister.nl/geonetwork/srv/dut/search#|a112fbc5-1aec-42b2-ae2e-600eb1aebebe</metadata>
+		<moreinfo>http://www.dienstlandelijkgebied.nl/actueel/publicaties/rapporten/document/fileitem/2001699</moreinfo>
 	</Layerdescriptor>
 </Layers>

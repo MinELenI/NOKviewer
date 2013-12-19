@@ -38,25 +38,43 @@
 								<fmt:message key="KEY_MENU_METADATA_TITEL" var="abbr">
 									<fmt:param value="${layer.name}" />
 								</fmt:message>
+								<fmt:message key="KEY_MENU_MOREINFO_TITEL" var="abbr">
+									<fmt:param value="${layer.name}" />
+								</fmt:message>
 								<fmt:message key="KEY_MENU_DATA_TITEL" var="dataTtl">
 									<fmt:param value="${layer.name}" />
 								</fmt:message> 
 								<a href="${fn:escapeXml(link)}" name="${layer.id}"
 									class="main switchlayer">${dataTtl}</a> 
 								
-								<c:if test="${not empty layer.metadata}">
+								<c:if test="${not empty layer.metadata or not empty layer.moreinfo}">
 
 									<ul>
+
+									<c:if test="${not empty layer.metadata}">
 										<li>
 											<!-- NB. ondanks dat het target attribuut niet geldig 
 													is in xhtml4 gebruiken we dat hier expres toch. 
-													In html5 is het attribuut weer in ere hersteld, 
+													In html5 is het attribuut target weer in ere hersteld, 
 													zie: http://dev.w3.org/html5/markup/a.html -->
 											<a href="${fn:escapeXml(layer.metadata)}" target="_blank"
 												class="metadata extern" rel="appendix"> 
 												<abbr title="${abbr}">metadata van ${dataTtl}</abbr>
 											</a>
 										</li>
+									</c:if>
+
+									<c:if test="${not empty layer.moreinfo}">
+										<li>
+											<!-- NB. in html5 is het attribuut target weer in ere hersteld, 
+													zie: http://dev.w3.org/html5/markup/a.html -->
+											<a href="${fn:escapeXml(layer.moreinfo)}" target="_blank"
+												class="moreinfo extern" rel="appendix"> 
+												<abbr title="${abbr}">${dataTtl} achtergrond en rapport</abbr>
+											</a>
+										</li>
+									</c:if>
+
 									</ul>
 
 								</c:if>
