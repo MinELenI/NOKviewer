@@ -19,6 +19,8 @@ jQuery(document)
 					});
 
 					Viewer.loadWMS(maps[0]);
+					// lufo aanzetten
+					Viewer.toggleBaseMap();
 
 					/* popup */
 					jQuery('.fancybox').fancybox();
@@ -61,7 +63,6 @@ jQuery(document)
 jQuery('.switchlayer').click(
 		function(event) {
 			event.preventDefault();
-			// only load new themes
 			// only load new themes
 			if (jQuery(this).attr('name') != config.defaultMapId && jQuery(this).attr('href') != '#'
 					&& jQuery(this).attr('class') != 'accordionheader') {
