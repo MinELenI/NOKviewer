@@ -8,13 +8,12 @@
 		trimDirectiveWhitespaces="false" language="java" isThreadSafe="false"
 		isErrorPage="false" />
 	<jsp:output doctype-root-element="html"
-		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
-		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
-		omit-xml-declaration="no" />
+		doctype-system="about:legacy-compat"
+		omit-xml-declaration="true" />
 
 	<fmt:setBundle basename="LabelsBundle" />
 
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">
 <head>
 <jsp:include page="WEB-INF/jsp/head_include.jsp" />
 
@@ -55,7 +54,7 @@
 </jsp:include>
 
 <c:if test="${param.coreonly!=true}">
-	<script type="text/javascript" charset="utf-8">
+	<script type="text/javascript">
 		document.documentElement.className += ' js';
 	</script>
 </c:if>
@@ -76,58 +75,30 @@
 
 
 	<div class="page">
-		<div class="header">
+		<header class="header">
 			<h1 class="h1">
 				<img src="img/logo.png" alt="Dienst Landelijk Gebied | Ministerie van Economische Zaken" />
 			</h1>
-			<div class="mainMenu">
-				<ul>
-					<li>
-						<c:url value="/index.jsp" var="indexLink">
-							<c:param name="coreonly" value="${param.coreonly}" />
-						</c:url>
-						<a href="${fn:escapeXml(indexLink)}"><fmt:message key="KEY_MENU_HOME" /></a></li>
-					<li>
-						<c:url value="/about.jsp" var="aboutLink">
-							<c:param name="coreonly" value="${param.coreonly}" />
-						</c:url>
-						<a class="fancybox fancybox.ajax" href="${fn:escapeXml(aboutLink)}"><fmt:message key="KEY_MENU_ABOUT" /></a>
-					</li>
-					<li>
-						<c:url value="/faq.jsp" var="faqLink">
-							<c:param name="coreonly" value="${param.coreonly}" />
-						</c:url>
-						<a class="fancybox fancybox.ajax" href="${fn:escapeXml(faqLink)}" rel="help"><fmt:message key="KEY_MENU_HELP" /></a>
-					</li>
-					<!--
-					<li>
-						<c:url value="/download.jsp" var="downloadLink">
-							<c:param name="coreonly" value="${param.coreonly}" />
-						</c:url>
-						<a class="fancybox fancybox.ajax" href="${fn:escapeXml(downloadLink)}"><fmt:message key="KEY_MENU_DOWNLOAD" /></a>
-					</li>
-					-->
-					<!-- div id downloadlink contains image -->
-					<c:if test="${not empty downloadLink}">
-						<fmt:message var="linkText" key="KEY_LINK_DOWNLOAD"><fmt:param value="${mapname}" /></fmt:message>
-						<li><a href="${fn:escapeXml(downloadLink)}"><c:out value="${linkText}" /></a></li>
-					</c:if>
-				</ul>
-			</div>
-			<jsp:include page="WEB-INF/jsp/zoekformulier.jsp"/>
-			<div class="pagetitle">
-				<h2 id="pagSubTitle"><fmt:message key="KEY_KAART_TITEL"><fmt:param value="${mapname}" /></fmt:message></h2>
-			</div>
-			<div class="clearer"></div>
-		</div>
 
-		<div id="inhoud">
+			<jsp:include page="WEB-INF/jsp/sitemenu_include.jsp" />
+
+			<jsp:include page="WEB-INF/jsp/mainmenu_include.jsp" />
+
+			<jsp:include page="WEB-INF/jsp/zoekformulier.jsp"/>
+		</header>
+
+
+		<main id="inhoud">
+			<div class="pagetitle">
+				<h1 id="pagSubTitle"><fmt:message key="KEY_KAART_TITEL"><fmt:param value="${mapname}" /></fmt:message></h1>
+			</div>
+
 			<div id="coreContainer" class="kaartContainer">
 				<!-- hier komt de statische kaart -->
 				<c:if test="${not empty kaart}">
 					<!-- StringConstants.MAP_CACHE_DIR -->
 					<img id="coreMapImage" src="${dir}/${kaart.name}"
-						alt="kaart voor thema: ${mapname}" width="512px" height="512px"
+						alt="kaart voor thema: ${mapname}" width="512" height="512"
 						longdesc="#featureinfo" />
 					<!-- navigatie knoppen zonder javascript -->
 					<jsp:include page="WEB-INF/jsp/core_nav_buttons_include.jsp" />
@@ -167,10 +138,10 @@
 						</c:if>
 					</div>
 				</li>
-			</ul>		
+			</ul>
 			<jsp:include page="WEB-INF/jsp/main_menu_include.jsp" />
-		</div>
-	</div>	
+		</main>
+	</div>
 
 	<jsp:include page="WEB-INF/jsp/footer_include.jsp" />
 
