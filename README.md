@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/MinELenI/NOKviewer.png?label=ready)](https://waffle.io/MinELenI/NOKviewer)
 NOK viewer
 =========
 
