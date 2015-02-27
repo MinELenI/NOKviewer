@@ -90,6 +90,12 @@
 			<properties>
 				<github.global.server>github</github.global.server>
 			</properties>
+			<repositories>
+			<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+			</repository>
+			</repositories>
 		</profile>
 		<profile>
 			<id>developer</id>
@@ -135,11 +141,17 @@
 	</profiles>
 	<dependencies>
 		<dependency>
-			<groupId>nl.cbs.cbsviewer</groupId>
+		
+			<groupId>com.github.MinELenI</groupId>
+			<artifactId>CBSviewer</artifactId>
+			<version>aca6189758</version>
+			<type>war</type>
+			<scope>runtime</scope>
+			<!-- groupId>nl.cbs.cbsviewer</groupId>
 			<artifactId>cbsviewer</artifactId>
 			<version>1.2-SNAPSHOT</version>
 			<type>war</type>
-			<scope>runtime</scope>
+			<scope>runtime</scope -->
 		</dependency>
 	</dependencies>
 	<build>
